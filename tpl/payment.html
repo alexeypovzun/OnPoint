@@ -1,0 +1,20 @@
+<div class="payment_wrapper payment_wrapper--hidden">
+	<div class="title_small">Checkout</div>
+	<div class="payment_txt_step">Step 2.</div>
+	<div class="payment_txt_info">Payment details</div>
+	<div class="payment_card_wrapper">
+		<div class="payment_card_visa"></div>
+		<div class="payment_card_txt payment_card_txt_number">Card Number</div>
+		<input class="payment_card_num payment_card_num_number" type="text" name="card_num_number" placeholder="0000   1111   2222   3333" maxlength="25" onkeypress="javascript:return isNumber(event)"/>
+		<div class="payment_card_txt payment_card_txt_exp">Expiration Date</div>
+		<div class="payment_card_txt payment_card_txt_cvv">CVV</div>
+		<div class="payment_card_num_wrapper">
+			<input class="payment_card_num payment_card_num_dd" type="text" name="card_num_dd" placeholder="30" maxlength="2" onkeypress="javascript:return isNumber(event)"/>
+			<input class="payment_card_num payment_card_num_mm" type="text" name="card_num_mm" placeholder="12" maxlength="2" onkeypress="javascript:return isNumber(event)"/>
+			<input class="payment_card_num payment_card_num_yy" type="text" name="card_num_yy" placeholder="2020" maxlength="4" onkeypress="javascript:return isNumber(event)"/>
+			<input class="payment_card_num payment_card_num_cvv" type="text" name="card_num_cvv" placeholder="123" maxlength="3" onkeypress="javascript:return isNumber(event)"/>
+		</div>
+	</div>
+	<div class="payment_footer"></div>
+	<div class="payment_btn_next button_big">Continue</div>
+</div>

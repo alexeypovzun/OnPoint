@@ -1,0 +1,4 @@
+[
+	{"id":"0","fullname":"","password":"","email":"","phone":"","address":"","city":"","postalcode":"","state":"","paycard":"","paydate":""},
+	{"id":"1","fullname":"Lukas Jurcik","password":"1234","email":"lukas.jurcik@gmail.com","phone":"+45 56 98 27 82","address":"Okruzna 2058/19","city":"Bratislava","postalcode":"3400","state":"Slovakia","paycard":"4321345698760123","paydate":"30.12.2021"}
+]
