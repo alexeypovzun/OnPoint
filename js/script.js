@@ -504,12 +504,11 @@ function loginCustomer(input_customer_email,input_customer_password) {
 				var users = JSON.parse(xhr.responseText);
 				var is_auth = 0;
 				for (i=1;i<users.length;i++) {
-					if (input_customer_email === users[i].email && input_customer_password === users[i].password) {
+					if (input_customer_email === users[i].email && CryptoJS.MD5(input_customer_password).toString() === users[i].password) {
 						var user_id = users[i].id;
 						Payment(user_id);
 						is_auth = 1;
 						var auth = document.getElementById("auth");
-						/* https://code.google.com/archive/p/crypto-js */
 						var user_id_hash = CryptoJS.MD5(user_id).toString();
 						auth.innerHTML = user_id_hash;
 						break;
@@ -525,7 +524,6 @@ function loginCustomer(input_customer_email,input_customer_password) {
 }
 
 /* payment page*/
-/* from https://www.encodedna.com/2012/12/javaScript-accept-only-numbers-textbox.htm */
 function isNumber(evt) {
     var iKeyCode = (evt.which) ? evt.which : evt.keyCode
         if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
@@ -713,10 +711,9 @@ function Login() {
 					var users = JSON.parse(xhr.responseText);
 					var is_auth = 0;
 					for (i=1;i<users.length;i++) {
-						if (input_login_email === users[i].email && input_login_password === users[i].password) {
+						if (input_login_email === users[i].email && users[i].password === CryptoJS.MD5(input_login_password).toString()) {
 							is_auth = 1;
 							var auth = document.getElementById("auth");
-							/* https://code.google.com/archive/p/crypto-js */
 							var user_hash = CryptoJS.MD5(users[i].email+users[i].password).toString();
 							auth.innerHTML = user_hash;
 							Profile(user_hash);
